@@ -14,14 +14,11 @@ language: zh-CN
 timezone: 'Asia/Shanghai'  # 中国时区，保证文章时间正确
 
 # ---------------- 网址 ----------------
-# 你用的是「用户名.github.io」仓库，所以 url 和 root 已经填好了，不用动。
-#
-# 如果以后改成普通仓库名（比如 blog），要改成：
-#   url: https://qiiiq-Cys.github.io/blog
-#   root: /blog/
-# 否则页面会加载不出样式（CSS/JS 404）。
-url: https://qiiiq-Cys.github.io
-root: /
+# 仓库名是 My_blog（普通仓库，不是 用户名.github.io），
+# 所以博客地址带子路径 /My_blog/，root 必须写成 /My_blog/
+# 仓库名或用户名变了，这两行要一起改，否则线上样式全丢。
+url: https://qiiiq-Cys.github.io/My_blog
+root: /My_blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -76,7 +73,7 @@ theme: next
 # 仓库名是 <用户名>.github.io 时，branch 用 main（或 master，看仓库默认分支）
 deploy:
   type: git
-  repo: https://github.com/qiiiq-Cys/qiiiq-Cys.github.io.git
+  repo: https://github.com/qiiiq-Cys/My_blog.git
   branch: main
   message: 'Site updated: {{ now("YYYY-MM-DD HH:mm:ss") }}'
 

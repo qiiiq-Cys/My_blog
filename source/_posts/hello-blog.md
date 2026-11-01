@@ -85,7 +85,7 @@ utterances 的脚本长这样，被塞进每篇文章页的模板里：
 
 ```html
 <script src="https://utteranc.es/client.js"
-        repo="qiiiq-Cys/qiiiq-Cys.github.io"
+        repo="qiiiq-Cys/My_blog"
         issue-term="pathname"
         theme="github-light"
         crossorigin="anonymous"
@@ -93,7 +93,7 @@ utterances 的脚本长这样，被塞进每篇文章页的模板里：
 </script>
 ```
 
-它做的事：读当前页面的 `pathname`，去 `qiiiq-Cys/qiiiq-Cys.github.io` 的 Issues 里找标题匹配的那条；找不到就等你第一条评论时自动创建。
+它做的事：读当前页面的 `pathname`，去 `qiiiq-Cys/My_blog` 的 Issues 里找标题匹配的那条；找不到就等你第一条评论时自动创建。
 
 所以：
 
