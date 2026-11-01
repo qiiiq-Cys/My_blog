@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/My_blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/My_blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/My_blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/My_blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/My_blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha256-4Lad8m4ZWW1Lgb9+sMVLYEfnIh7BjV1NQMEe79Pviks=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"qiiiq-cys.github.io","root":"/My_blog/","images":"/My_blog/images","scheme":"Gemini","darkmode":true,"version":"8.29.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/My_blog/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/My_blog/js/config.js" defer></script>
+
+    <meta name="description" content="一份给自己留的备忘录——这套博客是怎么跑起来的，以及以后怎么发文章。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零搭一个自己的博客：Hexo + GitHub Pages + utterances">
+<meta property="og:url" content="https://qiiiq-cys.github.io/My_blog/2026/11/01/hello-blog/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="一份给自己留的备忘录——这套博客是怎么跑起来的，以及以后怎么发文章。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-11-01T13:50:00.000Z">
+<meta property="article:modified_time" content="2026-11-01T14:03:07.308Z">
+<meta property="article:author" content="qiiiq-Cys">
+<meta property="article:tag" content="GitHub Pages">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://qiiiq-cys.github.io/My_blog/2026/11/01/hello-blog/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://qiiiq-cys.github.io/My_blog/2026/11/01/hello-blog/","path":"2026/11/01/hello-blog/","title":"从零搭一个自己的博客：Hexo + GitHub Pages + utterances"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>从零搭一个自己的博客：Hexo + GitHub Pages + utterances | 我的博客</title>
+  
+
+
+
+
+
+
+
+
+  
+<script src="/My_blog/js/utils.js" defer></script><script src="/My_blog/js/motion.js" defer></script><script src="/My_blog/js/sidebar.js" defer></script><script src="/My_blog/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/My_blog/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/My_blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-search popup-trigger" aria-label="搜索" role="button">
+      <i class="fa fa-search fa-fw fa-lg"></i>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/My_blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录与思考</p>
+  </div>
+
+  <div class="site-nav-toggle" aria-label="切换导航栏" role="button">
+      <i class="fa fa-ellipsis fa-fw fa-lg"></i>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/My_blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/My_blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">1</span></a></li><li class="menu-item menu-item-tags"><a href="/My_blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">3</span></a></li><li class="menu-item menu-item-categories"><a href="/My_blog/categories/" rel="section"><i class="fa fa-layer-group fa-fw"></i>分类<span class="badge">1</span></a></li><li class="menu-item menu-item-about"><a href="/My_blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  
+  <template id="search-popup-template"><div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div></template>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E4%BB%B6%E4%BA%8B%E7%9A%84%E5%88%86%E5%B7%A5"><span class="nav-number">1.</span> <span class="nav-text">整件事的分工</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E7%9A%84"><span class="nav-number">2.</span> <span class="nav-text">本地是怎么跑的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E6%96%87%E7%AB%A0%E6%97%B6%E8%83%BD%E7%94%A8%E4%BB%80%E4%B9%88"><span class="nav-number">3.</span> <span class="nav-text">写文章时能用什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA%E6%98%AF%E6%80%8E%E4%B9%88%E6%8C%82%E4%B8%8A%E5%8E%BB%E7%9A%84"><span class="nav-number">4.</span> <span class="nav-text">评论是怎么挂上去的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E9%86%92%E8%87%AA%E5%B7%B1"><span class="nav-number">5.</span> <span class="nav-text">提醒自己</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">qiiiq-Cys</p>
+  <div class="site-description" itemprop="description">写字的地方</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/My_blog/archives/">
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/My_blog/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/My_blog/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/qiiiq-Cys" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;qiiiq-Cys" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qiiiq-cys.github.io/My_blog/2026/11/01/hello-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/My_blog/images/avatar.gif">
+      <meta itemprop="name" content="qiiiq-Cys">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+      <meta itemprop="description" content="写字的地方">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="从零搭一个自己的博客：Hexo + GitHub Pages + utterances | 我的博客">
+      <meta itemprop="description" content="一份给自己留的备忘录——这套博客是怎么跑起来的，以及以后怎么发文章。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          从零搭一个自己的博客：Hexo + GitHub Pages + utterances
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-11-01 21:50:00 / 修改时间：22:03:07" itemprop="dateCreated datePublished" datetime="2026-11-01T21:50:00+08:00">2026-11-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/My_blog/categories/%E6%8A%98%E8%85%BE/" itemprop="url" rel="index"><span itemprop="name">折腾</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">一份给自己留的备忘录——这套博客是怎么跑起来的，以及以后怎么发文章。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>这是第一篇，写给自己看：把整条链路讲清楚，以后忘了回来翻。</p>
+<span id="more"></span>
+
+<h2 id="整件事的分工"><a href="#整件事的分工" class="headerlink" title="整件事的分工"></a>整件事的分工</h2><p>三个工具各干一件事，互不干扰：</p>
+<table>
+<thead>
+<tr>
+<th>环节</th>
+<th>工具</th>
+<th>干什么</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>写作与生成</td>
+<td>Hexo</td>
+<td>把 Markdown 编译成静态网站（HTML&#x2F;CSS&#x2F;JS）</td>
+</tr>
+<tr>
+<td>托管</td>
+<td>GitHub Pages</td>
+<td>免费存放静态文件，给一个公开网址</td>
+</tr>
+<tr>
+<td>评论</td>
+<td>utterances</td>
+<td>用 GitHub Issues 当评论区</td>
+</tr>
+</tbody></table>
+<p>关键理解：<strong>GitHub Pages 只会“发文件”，不会“跑程序”</strong>。所以博客上不可能有数据库、不能跑后端代码。评论之所以能做，是因为 utterances 用一个 JS 脚本在前端请求 GitHub 的 API，评论内容实际存在 Issues 里——绕了一圈，还是静态的。</p>
+<h2 id="本地是怎么跑的"><a href="#本地是怎么跑的" class="headerlink" title="本地是怎么跑的"></a>本地是怎么跑的</h2><p>Hexo 的目录分工：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">My_blog/</span><br><span class="line">├── source/            # 你写的东西</span><br><span class="line">│   ├── _posts/        # 文章（.md）</span><br><span class="line">│   ├── _drafts/       # 草稿，本地预览才可见</span><br><span class="line">│   ├── about/         # 独立页面</span><br><span class="line">│   ├── tags/          # 标签聚合页</span><br><span class="line">│   └── categories/    # 分类聚合页</span><br><span class="line">├── scaffolds/         # 新建文章时的模板</span><br><span class="line">├── themes/            # 主题（这里用 npm 装的 NexT，放在 node_modules）</span><br><span class="line">├── _config.yml        # 站点主配置</span><br><span class="line">├── _config.next.yml   # 主题配置（只写要改的项）</span><br><span class="line">└── public/            # 编译产物（自动生成，不进 Git）</span><br></pre></td></tr></table></figure>
+
+<p>常用命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo server      <span class="comment"># 本地预览：http://localhost:4000</span></span><br><span class="line">hexo new <span class="string">&quot;标题&quot;</span>   <span class="comment"># 新建文章</span></span><br><span class="line">hexo generate    <span class="comment"># 生成静态文件到 public/</span></span><br><span class="line">hexo deploy      <span class="comment"># 推送到 GitHub</span></span><br><span class="line">hexo clean       <span class="comment"># 清缓存（改配置没生效时用）</span></span><br></pre></td></tr></table></figure>
+
+<p><code>hexo deploy</code> 内部做的事：把 <code>public/</code> 里的内容 commit 到仓库的 <code>main</code> 分支再 push。所以<strong>生成的东西从不进你的源码分支</strong>，两边是分开的。</p>
+<h2 id="写文章时能用什么"><a href="#写文章时能用什么" class="headerlink" title="写文章时能用什么"></a>写文章时能用什么</h2><p>标题用 <code>##</code>，加粗用 <code>**</code>，这些不说了。几个值得记的：</p>
+<p>引用：</p>
+<blockquote>
+<p>写作是把想不清楚的事情，逼自己写清楚的过程。</p>
+</blockquote>
+<p>代码块带语言标记，会有高亮和复制按钮：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello, blog&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>折叠内容（适合放长代码或答案）：</p>
+<details>
+<summary>点开看更多</summary>
+
+<p>这里的文字默认隐藏。</p>
+</details>
+
+<h2 id="评论是怎么挂上去的"><a href="#评论是怎么挂上去的" class="headerlink" title="评论是怎么挂上去的"></a>评论是怎么挂上去的</h2><p>utterances 的脚本长这样，被塞进每篇文章页的模板里：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://utteranc.es/client.js&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">repo</span>=<span class="string">&quot;qiiiq-Cys/My_blog&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">issue-term</span>=<span class="string">&quot;pathname&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">theme</span>=<span class="string">&quot;github-light&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">async</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>它做的事：读当前页面的 <code>pathname</code>，去 <code>qiiiq-Cys/My_blog</code> 的 Issues 里找标题匹配的那条；找不到就等你第一条评论时自动创建。</p>
+<p>所以：</p>
+<ul>
+<li><strong>删评论 &#x3D; 去对应 Issue 里删 comment</strong></li>
+<li><strong>关掉某篇文章的评论 &#x3D; 在该篇文章 front-matter 里写 <code>comments: false</code></strong></li>
+<li>首次有人评论时，GitHub 会给仓库 owner 发通知</li>
+</ul>
+<h2 id="提醒自己"><a href="#提醒自己" class="headerlink" title="提醒自己"></a>提醒自己</h2><ul>
+<li>改 <code>_config.yml</code> 后一定要重启 <code>hexo server</code>，热更新不重读配置</li>
+<li>换了仓库名或域名，<code>url</code> 和 <code>root</code> 必须同步改，否则样式全丢</li>
+<li>文章文件名尽量别改，<code>pathname</code> 变了评论就对不上了</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/My_blog/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/My_blog/tags/GitHub-Pages/" rel="tag"># GitHub Pages</a>
+              <a href="/My_blog/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"># 博客</a>
+          </div>
+
+        
+
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">qiiiq-Cys</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"qiiiq-Cys/My_blog","issue_term":"pathname","theme":"github-light"}</script>
+<script src="/My_blog/js/third-party/comments/utterances.js" defer></script>
+
+</body>
+</html>
