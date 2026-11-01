@@ -9,7 +9,7 @@ title: 我的博客
 subtitle: '记录与思考'
 description: '写字的地方'
 keywords:
-author: qiq-git          # ★ 改成你的名字（会显示在文章作者、页脚版权处）
+author: qiiiq-Cys          # ★ 改成你的名字（会显示在文章作者、页脚版权处）
 language: zh-CN
 timezone: 'Asia/Shanghai'  # 中国时区，保证文章时间正确
 
@@ -17,10 +17,10 @@ timezone: 'Asia/Shanghai'  # 中国时区，保证文章时间正确
 # 你用的是「用户名.github.io」仓库，所以 url 和 root 已经填好了，不用动。
 #
 # 如果以后改成普通仓库名（比如 blog），要改成：
-#   url: https://qiq-git.github.io/blog
+#   url: https://qiiiq-Cys.github.io/blog
 #   root: /blog/
 # 否则页面会加载不出样式（CSS/JS 404）。
-url: https://qiq-git.github.io
+url: https://qiiiq-Cys.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -76,7 +76,7 @@ theme: next
 # 仓库名是 <用户名>.github.io 时，branch 用 main（或 master，看仓库默认分支）
 deploy:
   type: git
-  repo: https://github.com/qiq-git/qiq-git.github.io.git
+  repo: https://github.com/qiiiq-Cys/qiiiq-Cys.github.io.git
   branch: main
   message: 'Site updated: {{ now("YYYY-MM-DD HH:mm:ss") }}'
 

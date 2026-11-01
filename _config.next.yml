@@ -49,7 +49,7 @@ site_state: true
 
 # ---------------- 社交链接 ----------------
 social:
-  GitHub: https://github.com/qiq-git || fab fa-github
+  GitHub: https://github.com/qiiiq-Cys || fab fa-github
   #E-Mail: mailto:you@example.com || fa fa-envelope
 
 # ---------------- 文章目录 ----------------
@@ -96,7 +96,7 @@ utterances:
   # ★ 第 1 处：填「用户名/仓库名」
   # 这个仓库必须是 public，并且要装过 utterances 的 GitHub App（见部署说明第 4 步）
   # 建议就用博客仓库本身，issues 都集中在同一个地方好管理
-  repo: qiq-git/qiq-git.github.io
+  repo: qiiiq-Cys/qiiiq-Cys.github.io
 
   # 用文章的什么信息去匹配 Issue：
   #   pathname        -> 用网址路径，改标题不影响（推荐）

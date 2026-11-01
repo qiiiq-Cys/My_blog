@@ -4,7 +4,7 @@ date: 2026-11-01 21:50:00
 comments: true
 ---
 
-你好，我是 qiq-git。
+你好，我是 qiiiq-Cys。
 
 这里是我的个人博客，用来记录学习过程、技术笔记和一些零散的想法。
 
@@ -16,6 +16,6 @@ comments: true
 
 ## 联系我
 
-- GitHub：[qiq-git](https://github.com/qiq-git)
+- GitHub：[qiiiq-Cys](https://github.com/qiiiq-Cys)
 
 > 这个页面在 `source/about/index.md`，直接改内容就行。
