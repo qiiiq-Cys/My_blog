@@ -1,0 +1,87 @@
+# ==========================================================
+#  Hexo 主配置文件
+#  改完记得重启 hexo server
+#  ★ 标记的地方是需要你填真实信息的位置
+# ==========================================================
+
+# ---------------- 网站 ----------------
+title: 我的博客
+subtitle: '记录与思考'
+description: '写字的地方'
+keywords:
+author: qiq-git          # ★ 改成你的名字（会显示在文章作者、页脚版权处）
+language: zh-CN
+timezone: 'Asia/Shanghai'  # 中国时区，保证文章时间正确
+
+# ---------------- 网址 ----------------
+# 你用的是「用户名.github.io」仓库，所以 url 和 root 已经填好了，不用动。
+#
+# 如果以后改成普通仓库名（比如 blog），要改成：
+#   url: https://qiq-git.github.io/blog
+#   root: /blog/
+# 否则页面会加载不出样式（CSS/JS 404）。
+url: https://qiq-git.github.io
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+# ---------------- 目录 ----------------
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# ---------------- 写作 ----------------
+new_post_name: :year-:month-:day-:title.md   # 新建文章自动带日期前缀
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: true      # 新建文章时自动建同名文件夹，放图片用
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+
+# ---------------- 首页与分页 ----------------
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+per_page: 10
+pagination_dir: page
+
+# ---------------- 扩展 ----------------
+theme: next
+
+# ---------------- 部署 ----------------
+# ★ 改成你自己的仓库地址
+# 仓库名是 <用户名>.github.io 时，branch 用 main（或 master，看仓库默认分支）
+deploy:
+  type: git
+  repo: https://github.com/qiq-git/qiq-git.github.io.git
+  branch: main
+  message: 'Site updated: {{ now("YYYY-MM-DD HH:mm:ss") }}'
+
+# ---------------- 其它 ----------------
+meta_generator: true
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: 'mtime'

@@ -1,0 +1,110 @@
+# ==========================================================
+#  NexT 主题配置（覆盖 node_modules 里的默认值）
+#  这个文件只写「要改的项」，其余沿用主题默认，升级主题不会冲突
+#  ★ 需要你改的地方只有 3 处，都标了 ★
+# ==========================================================
+
+# ---------------- 外观方案 ----------------
+# 可选：Muse | Mist | Pisces | Gemini
+# Gemini 是左右双栏，最常用
+scheme: Gemini
+
+# 深色模式开关（右上角会出现切换按钮）
+darkmode: true
+
+# 代码块样式
+codeblock:
+  theme:
+    light: default
+    dark: stackoverflow-dark
+  copy_button:
+    enable: true
+
+# ---------------- 导航菜单 ----------------
+# 格式：路径 || 图标
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-layer-group
+  about: /about/ || fa fa-user
+
+menu_settings:
+  icons: true
+  badges: true   # 菜单上显示文章数量角标
+
+# ---------------- 侧边栏 ----------------
+sidebar:
+  position: left
+  display: post     # 只在文章页展开侧边栏
+
+# 头像：把你的图片放到 source/images/ 下，然后写 /images/xxx.jpg
+avatar:
+  url: #/images/avatar.jpg
+  rounded: true
+  rotated: false
+
+# 侧边栏显示文章/分类/标签数量
+site_state: true
+
+# ---------------- 社交链接 ----------------
+social:
+  GitHub: https://github.com/qiq-git || fab fa-github
+  #E-Mail: mailto:you@example.com || fa fa-envelope
+
+# ---------------- 文章目录 ----------------
+toc:
+  enable: true
+  number: true
+  wrap: false
+  expand_all: false
+
+# 阅读进度条（页面顶部一条彩色进度）
+reading_progress:
+  enable: true
+  position: top
+
+# 回到顶部按钮
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+# ---------------- 本地搜索 ----------------
+local_search:
+  enable: true
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+
+# ---------------- 页脚 ----------------
+footer:
+  since: 2026
+  icon:
+    name: fa fa-heart
+    animated: true
+    color: "#ff0000"
+
+# ==========================================================
+#  评论区：utterances
+#  原理：脚本在你的文章页渲染一个 iframe，访客用 GitHub 账号授权后评论，
+#        每条评论 = 你仓库里的一个 Issue。删 Issue 就等于删评论。
+# ==========================================================
+utterances:
+  enable: true
+
+  # ★ 第 1 处：填「用户名/仓库名」
+  # 这个仓库必须是 public，并且要装过 utterances 的 GitHub App（见部署说明第 4 步）
+  # 建议就用博客仓库本身，issues 都集中在同一个地方好管理
+  repo: qiq-git/qiq-git.github.io
+
+  # 用文章的什么信息去匹配 Issue：
+  #   pathname        -> 用网址路径，改标题不影响（推荐）
+  #   url             -> 用完整网址，换域名会断
+  #   title           -> 用文章标题，改标题会导致评论丢失
+  issue_term: pathname
+
+  # 主题：github-light / github-dark / preferred-color-scheme（跟随系统）
+  # 注意：这里设成 github-light，是因为它和 NexT 的浅色模式最搭；
+  #       想跟随系统就改成 preferred-color-scheme
+  theme: github-light

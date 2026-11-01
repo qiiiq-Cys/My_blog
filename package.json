@@ -1,0 +1,33 @@
+{
+  "name": "my-blog",
+  "version": "0.0.0",
+  "private": true,
+  "description": "My personal blog powered by Hexo",
+  "scripts": {
+    "start": "hexo server",
+    "server": "hexo server",
+    "dev": "hexo server --draft",
+    "clean": "hexo clean",
+    "build": "hexo generate",
+    "deploy": "hexo deploy",
+    "new": "hexo new",
+    "publish": "hexo clean && hexo generate && hexo deploy"
+  },
+  "hexo": {
+    "version": "8.1.2"
+  },
+  "dependencies": {
+    "hexo": "^8.1.2",
+    "hexo-deployer-git": "^4.0.0",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-searchdb": "^1.5.0",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^7.0.1",
+    "hexo-renderer-stylus": "^3.0.1",
+    "hexo-server": "^3.0.0",
+    "hexo-theme-next": "^8.29.1"
+  }
+}
