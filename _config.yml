@@ -69,13 +69,15 @@ pagination_dir: page
 theme: next
 
 # ---------------- 部署 ----------------
-# ★ 改成你自己的仓库地址
-# 仓库名是 <用户名>.github.io 时，branch 用 main（或 master，看仓库默认分支）
+# 仓库：qiiiq-Cys/My_blog，产物推送到 main 分支
 deploy:
   type: git
   repo: https://github.com/qiiiq-Cys/My_blog.git
   branch: main
   message: 'Site updated: {{ now("YYYY-MM-DD HH:mm:ss") }}'
+  # 必须显式允许隐藏文件！hexo-fs 复制目录时默认 ignoreHidden=true，
+  # 会把 public/.nojekyll 静默丢掉，导致 GitHub Pages 又启用了 Jekyll
+  ignore_hidden: false
 
 # ---------------- 其它 ----------------
 meta_generator: true
