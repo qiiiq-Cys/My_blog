@@ -74,7 +74,11 @@ deploy:
   type: git
   repo: https://github.com/qiiiq-Cys/My_blog.git
   branch: main
-  message: 'Site updated: {{ now("YYYY-MM-DD HH:mm:ss") }}'
+  # 不要在这里用 {{ now("...") }} 这类模板！
+  # Windows 命令行会因里面的双引号把参数切断，导致提交信息变成
+  # "Site updated: YYYY-11-2026年11月3日 20:09:38" 这种乱码。
+  # 提交时间 git 自己会记，这里写固定文字即可。
+  message: 'Site updated'
   # 必须显式允许隐藏文件！hexo-fs 复制目录时默认 ignoreHidden=true，
   # 会把 public/.nojekyll 静默丢掉，导致 GitHub Pages 又启用了 Jekyll
   ignore_hidden: false
