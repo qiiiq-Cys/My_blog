@@ -77,6 +77,16 @@ local_search:
   unescape: false
   preload: false
 
+# ---------------- 首页摘要规则 ----------------
+# 默认 true 时，NexT 会优先拿 front-matter 里的 description 当首页摘要，
+# 导致文章里写的 <!-- more --> 完全失效。
+# 改成 false 后，统一由 <!-- more --> 控制「首页显示到哪里」，
+# description 只用于 SEO 和分享卡片，职责更清楚。
+excerpt_description: false
+
+# 摘要下面显示「阅读全文」按钮
+read_more_btn: true
+
 # ---------------- 页脚 ----------------
 footer:
   since: 2026
