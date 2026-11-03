@@ -11,7 +11,9 @@
     "build": "hexo generate",
     "deploy": "hexo deploy",
     "new": "hexo new",
-    "publish": "hexo clean && hexo generate && hexo deploy"
+    "publish": "hexo clean && hexo generate && hexo deploy",
+    "backup": "git add -A && git commit -m backup && git push",
+    "sync": "git push"
   },
   "hexo": {
     "version": "8.1.2"
