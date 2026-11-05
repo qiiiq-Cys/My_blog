@@ -1,7 +1,8 @@
 # ==========================================================
 #  NexT 主题配置（覆盖 node_modules 里的默认值）
 #  这个文件只写「要改的项」，其余沿用主题默认，升级主题不会冲突
-#  ★ 需要你改的地方只有 3 处，都标了 ★
+#  ★ 标记的是需要填真实信息的位置
+#  当前唯一待填：文件末尾的 twikoo.envId（步骤见《留言评论部署指南.md》）
 # ==========================================================
 
 # ---------------- 外观方案 ----------------
@@ -11,6 +12,12 @@ scheme: Gemini
 
 # 深色模式开关（右上角会出现切换按钮）
 darkmode: true
+
+# ---------------- 自定义注入点 ----------------
+# NexT 8 内置能力：把 source/_data/post-body-end.njk 插到文章正文末尾
+# 用来放匿名评论区，不需要额外装 npm 插件，也不受主题升级影响
+custom_file_path:
+  postBodyEnd: source/_data/post-body-end.njk
 
 # 代码块样式
 codeblock:
@@ -96,14 +103,18 @@ footer:
     color: "#ff0000"
 
 # ==========================================================
-#  评论区：utterances
-#  原理：脚本在你的文章页渲染一个 iframe，访客用 GitHub 账号授权后评论，
-#        每条评论 = 你仓库里的一个 Issue。删 Issue 就等于删评论。
+#  评论区已切换到 Twikoo（匿名、公开、能盖楼，访客不需要 GitHub 账号）
+#  配置见文件末尾的 twikoo 段，部署步骤见《留言评论部署指南.md》
+#
+#  【旧】utterances：原理是「每条评论 = 仓库里的一个 Issue」，
+#        访客必须用 GitHub 账号授权，没账号的人留不了言，故已关闭。
+#        配置完整保留：想切回来就把 enable 改成 true，
+#        同时把 twikoo.envId 清空，避免两套评论区同时出现。
 # ==========================================================
 utterances:
-  enable: true
+  enable: false
 
-  # ★ 第 1 处：填「用户名/仓库名」
+  # 仓库名：只有切回 utterances 时才需要确认这行
   # 这个仓库必须是 public，并且要装过 utterances 的 GitHub App（见部署说明第 4 步）
   # 建议就用博客仓库本身，issues 都集中在同一个地方好管理
   repo: qiiiq-Cys/My_blog
@@ -118,3 +129,16 @@ utterances:
   # 注意：这里设成 github-light，是因为它和 NexT 的浅色模式最搭；
   #       想跟随系统就改成 preferred-color-scheme
   theme: github-light
+
+# ==========================================================
+#  评论区：Twikoo（匿名、公开、可回复，访客不需要任何账号）
+#  ★ 唯一要你填的：envId —— 部署好云函数后拿到的地址或环境 ID
+#    步骤见《留言评论部署指南.md》第 1~3 步
+#    留空 = 不注入任何评论框，线上不会出现坏掉的评论区
+#    填好后执行 npm run publish 即生效
+#  Vercel：填根地址，如 https://xxx.vercel.app
+#  Netlify：必须带完整函数路径，如 https://xxx.netlify.app/.netlify/functions/twikoo
+#  腾讯云 CloudBase：填纯环境 ID，如 twikoo-xxxxxxxx
+# ==========================================================
+twikoo:
+  envId:

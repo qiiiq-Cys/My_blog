@@ -1,0 +1,15 @@
+{%- if theme.twikoo and theme.twikoo.envId %}
+<div id="tcomment" style="margin-top: 2rem;"></div>
+<script src="{{ url_for('/js/twikoo.all.min.js') }}" defer></script>
+<script>
+window.addEventListener('load', function () {
+  if (typeof twikoo === 'undefined') return;
+  twikoo.init({
+    envId: '{{ theme.twikoo.envId }}',
+    el: '#tcomment',
+    path: window.location.pathname,
+    lang: 'zh-CN'
+  });
+});
+</script>
+{%- endif %}
