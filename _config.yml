@@ -48,6 +48,15 @@ render_drafts: false
 post_asset_folder: true      # 新建文章时自动建同名文件夹，放图片用
 relative_link: false
 future: true
+
+# Markdown 渲染器（hexo-renderer-marked）
+# postAsset 必须开！否则 ![](1.png) 会被解析成「站点根目录下的 1.png」而不是
+# 「这篇文章自己的图片目录」，结果就是图片 404、网页上显示破图。
+marked:
+  prependRoot: true
+  postAsset: true
+  lazyload: false
+
 highlight:
   enable: true
   line_number: true
