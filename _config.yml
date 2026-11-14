@@ -92,6 +92,15 @@ deploy:
   # 会把 public/.nojekyll 静默丢掉，导致 GitHub Pages 又启用了 Jekyll
   ignore_hidden: false
 
+# ---------------- 本地预览服务器 ----------------
+# 默认端口 4000 落在 Windows 的保留端口段里（Hyper-V / WSL / Docker 会圈走
+# 3952-4051 这一段），一启动就报 EACCES: permission denied。
+# 换到 5000，这个端口不在保留段里。
+server:
+  port: 5000
+  compress: false
+  header: true
+
 # ---------------- 其它 ----------------
 meta_generator: true
 date_format: YYYY-MM-DD

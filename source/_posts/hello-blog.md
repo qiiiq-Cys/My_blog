@@ -47,7 +47,7 @@ My_blog/
 常用命令：
 
 ```bash
-hexo server      # 本地预览：http://localhost:4000
+hexo server      # 本地预览：http://localhost:5000
 hexo new "标题"   # 新建文章
 hexo generate    # 生成静态文件到 public/
 hexo deploy      # 推送到 GitHub
